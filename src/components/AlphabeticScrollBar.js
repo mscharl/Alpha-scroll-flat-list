@@ -111,16 +111,16 @@ const styles = {
     container: {
         width: 30,
         position: 'absolute',
-        right: 0,
+        right: 10,
         top: 0,
-        bottom: 0,
+        bottom: 5,
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center'
     },
     letter: {
         alignSelf: 'center',
-        fontWeight: 'bold'
+        color: '#8e898e',
     }
 };
 
