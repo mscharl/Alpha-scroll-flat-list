@@ -97,7 +97,7 @@ export default class AlphaScrollFlatList extends Component {
                     break;
                 }
             }
-            this.flatListRef.scrollToIndex({
+            this.list.scrollToIndex({
                 animated: true,
                 index: letterIndex,
                 viewOffset: 2,
