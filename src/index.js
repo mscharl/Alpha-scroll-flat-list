@@ -69,20 +69,17 @@ export default class AlphaScrollFlatList extends Component {
                 activeLetterViewTop
             });
 
-            if (letter === '#') {
-                //it's a number or a symbol, scroll to the top or to the bottom of the list
-                const firstIndex = 0;
-                const lastIndex = this.props.data.length - 1;
-
-                index = this.props.reverse ? lastIndex : firstIndex;
-            } else {
-                //Get index of item with that letter and scroll to the first result on the list
-                index = this.props.data.findIndex(item => item[this.props.scrollKey].charAt(0).localeCompare(letter) === 0);
-            }
+            //Get index of item with that letter and scroll to the first result on the list
+            index = this.props.data.findIndex((item) => {
+                return item[this.props.scrollKey].charAt(0).localeCompare(letter) === 0
+            });
 
             if (index !== -1)
-                this.list.scrollToOffset({ animated: false, offset: index * this.props.itemHeight });
-        }
+                this.list.scrollToIndex({
+                    animated: true,
+                    index: index,
+                    viewOffset: 2,
+                });        }
     }
 
     handleOnScrollEnds () {
