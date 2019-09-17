@@ -36,14 +36,14 @@ const styles = {
         alignItems: 'center',
         alignSelf: 'center',
         borderRadius: 25,
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
         zIndex: 999,
-        right: 50
+        right: 45
     },
     letter: {
-        fontSize: 20,
-        fontWeight: 'bold', 
+        fontSize: 18,
+        fontWeight: 'bold',
         color: '#fff',
         alignSelf: 'center',
         textAlign: 'center',

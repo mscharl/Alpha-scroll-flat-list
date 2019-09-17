@@ -111,9 +111,9 @@ const styles = {
     container: {
         width: 30,
         position: 'absolute',
-        right: 10,
+        right: 12,
         top: 0,
-        bottom: 5,
+        bottom: '2%',
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center'

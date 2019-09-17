@@ -58,7 +58,7 @@ export default class AlphaScrollFlatList extends Component {
     //Proper methods
     handleOnScroll (letter, activeLetterViewTop) {
         if (letter) {
-            let index;
+            let index = 0;
             let viewPos = 0;
             if (this.state.activeLetter === undefined) {
                 this.props.onScrollStarts();
@@ -68,18 +68,6 @@ export default class AlphaScrollFlatList extends Component {
                 activeLetter: letter,
                 activeLetterViewTop
             });
-
-            //Get index of item with that letter and scroll to the first result on the list
-            // index = this.props.data.findIndex((item) => {
-            //     return item[this.props.scrollKey].charAt(0).localeCompare(letter) === 0
-            // });
-            //
-            // if (index !== -1)
-            //     this.list.scrollToIndex({
-            //         animated: true,
-            //         index: index,
-            //         viewOffset: 2,
-            //     });        }
 
             for (let i = 0; i <= this.props.data.length - 1; i += 1) {
                 if (this.props.data[i].index === letter) {
@@ -92,14 +80,20 @@ export default class AlphaScrollFlatList extends Component {
                     viewPos = 0.2;
                     break;
                 }
+                if (this.props.data[i].index > letter){
+                    index = i;
+                    viewPos = 0.2;
+                    break;
+                }
                 if (i === this.props.data.length - 1) {
                     index = i;
                     break;
                 }
             }
+
             this.list.scrollToIndex({
                 animated: true,
-                index: letterIndex,
+                index: index,
                 viewOffset: 2,
                 viewPosition: viewPos,
             });
@@ -188,7 +182,7 @@ AlphaScrollFlatList.propTypes = {
 AlphaScrollFlatList.defaultProps = {
     hideSideBar: false,
     scrollKey: 'name',
-    activeColor: '#52bad5',
+    activeColor: '#D52B1E',
     reverse: false,
     itemHeight: 20,
     scrollBarFontSizeMultiplier: 1,
