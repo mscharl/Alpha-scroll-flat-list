@@ -35,6 +35,7 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
+        marginTop: 20,
         borderRadius: 25,
         width: 45,
         height: 45,

@@ -109,6 +109,7 @@ class AlphabeticScrollBar extends Component {
 
 const styles = {
     container: {
+        marginTop: 20,
         width: 30,
         position: 'absolute',
         right: 12,
