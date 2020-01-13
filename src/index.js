@@ -92,7 +92,7 @@ export default class AlphaScrollFlatList extends Component {
             }
 
             this.list.scrollToIndex({
-                animated: true,
+                animated: !this.props.disableScrollAnimation,
                 index: index,
                 viewOffset: 2,
                 viewPosition: viewPos,
@@ -168,6 +168,7 @@ export default class AlphaScrollFlatList extends Component {
 AlphaScrollFlatList.propTypes = {
     hideSideBar: PropTypes.bool,
     hideScrollBarPointer: PropTypes.bool,
+    disableScrollAnimation: PropTypes.bool,
     scrollKey: PropTypes.string,
     reverse: PropTypes.bool,
     itemHeight: PropTypes.number,
