@@ -94,7 +94,7 @@ export default class AlphaScrollFlatList extends Component {
             this.list.scrollToIndex({
                 animated: !this.props.disableScrollAnimation,
                 index: index,
-                viewOffset: 2,
+                viewOffset: this.props.activeHeaderviewOffset,
                 viewPosition: viewPos,
             });
         }
@@ -169,6 +169,7 @@ AlphaScrollFlatList.propTypes = {
     hideSideBar: PropTypes.bool,
     hideScrollBarPointer: PropTypes.bool,
     disableScrollAnimation: PropTypes.bool,
+    activeHeaderviewOffset: PropTypes.number,
     scrollKey: PropTypes.string,
     reverse: PropTypes.bool,
     itemHeight: PropTypes.number,
@@ -182,6 +183,7 @@ AlphaScrollFlatList.propTypes = {
 };
 
 AlphaScrollFlatList.defaultProps = {
+    activeHeaderviewOffset: 0,
     hideSideBar: false,
     scrollKey: 'name',
     activeColor: '#D52B1E',
