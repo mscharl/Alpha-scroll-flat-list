@@ -121,6 +121,7 @@ const styles = {
     },
     letter: {
         alignSelf: 'center',
+        fontWeight: 'bold',
     }
 };
 
