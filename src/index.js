@@ -151,7 +151,7 @@ export default class AlphaScrollFlatList extends Component {
                         onScrollEnds={debounce(this.handleOnScrollEnds.bind(this))}
                     />
                 )}
-                {this.state.activeLetter && !this.props.hideSideBar
+                {this.state.activeLetter && !this.props.hideSideBar && !this.props.hideScrollBarPointer
                     ? <AlphabeticScrollBarPointer
                         letter={this.state.activeLetter}
                         color={this.props.activeColor}
@@ -167,6 +167,7 @@ export default class AlphaScrollFlatList extends Component {
 
 AlphaScrollFlatList.propTypes = {
     hideSideBar: PropTypes.bool,
+    hideScrollBarPointer: PropTypes.bool,
     scrollKey: PropTypes.string,
     reverse: PropTypes.bool,
     itemHeight: PropTypes.number,
