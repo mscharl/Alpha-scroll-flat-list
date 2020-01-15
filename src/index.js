@@ -80,12 +80,14 @@ export default class AlphaScrollFlatList extends Component {
                 });
             }
 
-            this.list.scrollToIndex({
-                animated: !this.props.disableScrollAnimation,
-                index: index,
-                viewOffset: this.props.activeHeaderviewOffset,
-                viewPosition: viewPos,
-            });
+            if(index >= 0) {
+                this.list.scrollToIndex({
+                    animated: !this.props.disableScrollAnimation,
+                    index: index,
+                    viewOffset: this.props.activeHeaderviewOffset,
+                    viewPosition: viewPos,
+                });
+            }
         }
     }
 
